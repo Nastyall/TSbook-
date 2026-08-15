@@ -1,0 +1,110 @@
+<mxGraphModel dx="1422" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    
+    <!-- Users Table -->
+    <mxCell id="users" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Users&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;username&lt;br&gt;email&lt;br&gt;password&lt;br&gt;first_name&lt;br&gt;last_name&lt;br&gt;date_joined" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="600" y="50" width="180" height="200" as="geometry"/>
+    </mxCell>
+    
+    <!-- Profile Table -->
+    <mxCell id="profile" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Profile&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;user_id (FK)&lt;br&gt;phone&lt;br&gt;city&lt;br&gt;address&lt;br&gt;bio&lt;br&gt;avatar&lt;br&gt;latitude&lt;br&gt;longitude&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="850" y="50" width="180" height="200" as="geometry"/>
+    </mxCell>
+    
+    <!-- Books Table -->
+    <mxCell id="books" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Books&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;owner_id (FK)&lt;br&gt;title&lt;br&gt;author&lt;br&gt;description&lt;br&gt;condition&lt;br&gt;transaction_type&lt;br&gt;price&lt;br&gt;city&lt;br&gt;cover_image&lt;br&gt;is_active&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="350" y="350" width="180" height="220" as="geometry"/>
+    </mxCell>
+    
+    <!-- Messages Table -->
+    <mxCell id="messages" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Messages&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;sender_id (FK)&lt;br&gt;receiver_id (FK)&lt;br&gt;book_id (FK)&lt;br&gt;message&lt;br&gt;attachment_image&lt;br&gt;is_read&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="600" y="350" width="180" height="200" as="geometry"/>
+    </mxCell>
+    
+    <!-- Favorites Table -->
+    <mxCell id="favorites" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Favorites&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;user_id (FK)&lt;br&gt;book_id (FK)&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="150" y="350" width="160" height="140" as="geometry"/>
+    </mxCell>
+    
+    <!-- Ratings Table -->
+    <mxCell id="ratings" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Ratings&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;reviewer_id (FK)&lt;br&gt;reviewee_id (FK)&lt;br&gt;book_id (FK)&lt;br&gt;rating&lt;br&gt;comment&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="850" y="350" width="180" height="180" as="geometry"/>
+    </mxCell>
+    
+    <!-- Subscriptions Table -->
+    <mxCell id="subscriptions" value="&lt;font size=&quot;4&quot;&gt;&lt;b&gt;Subscriptions&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;id (PK)&lt;br&gt;subscriber_id (FK)&lt;br&gt;subscribed_user_id (FK)&lt;br&gt;created_at" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;" vertex="1" parent="1">
+      <mxGeometry x="1100" y="350" width="180" height="140" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Profile (1:1) -->
+    <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="profile">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label1" value="1:1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="790" y="60" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Books (1:N) -->
+    <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="books">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label2" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="520" y="280" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Messages (1:N) -->
+    <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="messages">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label3" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="680" y="280" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Books → Messages (1:N) -->
+    <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="books" target="messages">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label4" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="550" y="440" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Favorites (1:N) -->
+    <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="favorites">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label5" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="380" y="280" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Books → Favorites (1:N) -->
+    <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="books" target="favorites">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label6" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="280" y="440" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Ratings (1:N) -->
+    <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="ratings">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label7" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="920" y="280" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Users → Subscriptions (1:N) -->
+    <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="users" target="subscriptions">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="label8" value="1:N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+      <mxGeometry x="1170" y="280" width="40" height="30" as="geometry"/>
+    </mxCell>
+    
+    <!-- Legend -->
+    <mxCell id="legend" value="&lt;b&gt;Легенда:&lt;/b&gt;&lt;br&gt;PK — Первичный ключ&lt;br&gt;FK — Внешний ключ" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;dashed=1;" vertex="1" parent="1">
+      <mxGeometry x="1100" y="50" width="200" height="80" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
